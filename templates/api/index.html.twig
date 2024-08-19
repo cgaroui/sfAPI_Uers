@@ -5,8 +5,29 @@
 {% block body %}
 <h1>Users</h1>
 
+
 <div class="users">
     {% for user in users.results %}
+    <div class="data">
+        <form action="{{path('membre_add')}}" method="post">
+            <input type="hidden" name="title" value="{{ user.name.title}}">
+            <input type="hidden" name="last" value="{{ user.name.last}}">
+            <input type="hidden" name="first" value="{{ user.name.first}}">
+            <input type="hidden" name="email" value="{{ user.email}}">
+            <input type="hidden" name="phone" value="{{ user.phone}}">
+            <input type="hidden" name="picture" value="{{ user.picture.large}}">
+            <input type="hidden" name="streetnumber" value="{{ user.location.streetnumber}}">
+            <input type="hidden" name="streetname" value="{{ user.location.streetname}}">
+            <input type="hidden" name="postcode" value="{{ user.location.postcode}}">
+            <input type="hidden" name="city" value="{{ user.location.city}}">
+            <input type="hidden" name="country" value="{{ user.location.country}}">
+            <input type="hidden" name="uuid" value="{{ user.login.uuid}}">
+            <button>
+                <i class="ri-folder-add-line plus"></i>
+            </button>
+        </form>
+
+    </div>
         <div class="user">
             <div class="top">
                 <div>
