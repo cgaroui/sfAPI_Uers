@@ -37,7 +37,6 @@ class ApiController extends AbstractController
     public function addMembre(EntityManagerInterface $entityManager, Request $request, Membre $membre = null)
     {
         $membre = new Membre();
-        
  
         $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $last = filter_input(INPUT_POST, 'last', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
